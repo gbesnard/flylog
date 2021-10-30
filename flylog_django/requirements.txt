@@ -1,0 +1,4 @@
+Django==2.1.5
+gunicorn==20.0.4
+pytz==2018.7
+pathlib2==2.3.6

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6985c061-cfbb-4925-a842-067e599b6bf5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/overview/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/overview/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/overview/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/overview/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base_generic.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base_generic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/igc.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/igc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/leaflet-map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/relief.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/overview/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/overview/base_generic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/overview/flight_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/overview/flight_detail.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1cdAYb9Lu6cSSedoVypmLlQD6AE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/js" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/overview/igc_lib" />
+      <recent name="$PROJECT_DIR$/flylog_django" />
+      <recent name="$PROJECT_DIR$/overview" />
+      <recent name="$PROJECT_DIR$/static/css" />
+      <recent name="$PROJECT_DIR$/templates/overview" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/overview/igc_lib" />
+      <recent name="$PROJECT_DIR$/templates/overview" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="flylog_django" type="Python.DjangoServer" factoryName="Django server">
+      <module name="flylog_django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="flylog_django.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6985c061-cfbb-4925-a842-067e599b6bf5" name="Default Changelist" comment="" />
+      <created>1545065376632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545065376632</updated>
+      <workItem from="1545065384506" duration="330000" />
+      <workItem from="1545142471200" duration="15638000" />
+      <workItem from="1545843138917" duration="1308000" />
+      <workItem from="1546019484027" duration="780000" />
+      <workItem from="1546020918558" duration="102000" />
+      <workItem from="1546078625711" duration="13153000" />
+      <workItem from="1546691213844" duration="761000" />
+      <workItem from="1546793837562" duration="6056000" />
+      <workItem from="1546799960561" duration="71000" />
+      <workItem from="1546863585597" duration="11604000" />
+      <workItem from="1550090142481" duration="912000" />
+      <workItem from="1550170799892" duration="4000" />
+      <workItem from="1550345852938" duration="1502000" />
+      <workItem from="1550440295916" duration="641000" />
+      <workItem from="1550692159823" duration="1198000" />
+      <workItem from="1551283752595" duration="829000" />
+      <workItem from="1552168767619" duration="810000" />
+      <workItem from="1552215459009" duration="426000" />
+      <workItem from="1553883697401" duration="2309000" />
+      <workItem from="1554044107443" duration="661000" />
+      <workItem from="1554658053775" duration="643000" />
+      <workItem from="1554918495918" duration="741000" />
+      <workItem from="1555606235416" duration="777000" />
+      <workItem from="1555956092684" duration="320000" />
+      <workItem from="1556363034261" duration="403000" />
+      <workItem from="1556371816985" duration="18942000" />
+      <workItem from="1556442721031" duration="2827000" />
+      <workItem from="1558898122804" duration="1717000" />
+      <workItem from="1560366656674" duration="1053000" />
+      <workItem from="1560791149389" duration="2804000" />
+      <workItem from="1562862920070" duration="5577000" />
+      <workItem from="1568818258701" duration="1976000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="96875000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="464" y="188" width="992" height="734" key="SettingsEditor" timestamp="1590850723021">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="464" y="188" width="992" height="734" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1590850723021" />
+    <state x="623" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1590865548304">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="256" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1590865548304" />
+  </component>
+</project>

@@ -1,0 +1,28 @@
+html, body, .main-content {
+    height: 100%;
+    width: auto;
+}
+
+body {
+    /* height of .navbar, customize with @navbar-height variable */
+    padding-top: 50px;
+    margin: 20px;
+}
+
+.navbar {
+    min-height: 50px;
+}
+
+#cesiumContainer {
+    height: 90%;
+    margin-bottom: 30px;
+}
+
+#leaflet-map {
+    height: 90%;
+    margin-bottom: 30px;
+}
+
+#toggleButton {
+    padding: 0px;
+}

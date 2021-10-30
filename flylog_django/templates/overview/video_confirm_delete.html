@@ -1,0 +1,8 @@
+{% extends "overview/base_generic.html" %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <p>Supprimer la video "{{ video.video_path }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock %}

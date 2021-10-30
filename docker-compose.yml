@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+    nginx:
+        build: ./nginx
+        volumes:
+            - ./flylog_django:/usr/src/flylog_django/
+              #- static_volume:/usr/src/flylog_django/static/
+              #            - media_volume:/usr/src/flylog_django/media/
+        ports:
+            - 1337:80
+        depends_on:
+            - web
+    web:
+        build: ./flylog_django
+        env_file:
+            - .env
+        environment:
+            - SECRET_KEY:${SECRET_KEY}
+            - CESIUM_KEY:${CESIUM_KEY}
+            - ALLOWED_HOST:${ALLOWED_HOST}
+        command: gunicorn --timeout 360000 flylog_django.wsgi:application --bind 0.0.0.0:8000
+        volumes:
+            - ./flylog_django:/usr/src/flylog_django/
+              #            - static_volume:/usr/src/flylog_django/static/
+              #            - media_volume:/usr/src/flylog_django/media/
+        expose:
+            - 8000
+# volumes:
+#    static_volume:
+#    media_volume:

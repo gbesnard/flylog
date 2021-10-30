@@ -1,0 +1,22 @@
+{% extends "overview/base_generic.html" %}
+
+{% block content %}
+    {% if flight_list %}
+        {% for flight in flight_list %}
+            {% for image in flight.image_set.all %}
+                <img width=40% src="/media/{{ image.img_path }}" alt="{{ image.img_path }}"></br>
+                <p>{{ flight.date }}</p></br>
+            {% endfor %}
+            {% for video in flight.video_set.all %}
+                <img width=40% src="/media/{{ video.video_path }}" alt=""></br>
+                <video width="640" height="480" controls>
+                    <source src="/media/{{ video.video_path }}" type="video/mp4">
+			        Your browser does not support the video tag.
+		        </video>
+                <p>{{ flight.date }}</p></br>
+            {% endfor %}
+        {% endfor %}
+    {% else %}
+        <p>Aucun vols</p>
+    {% endif %}
+{% endblock %}

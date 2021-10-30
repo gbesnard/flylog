@@ -1,0 +1,15 @@
+{% extends "overview/base_generic.html" %}
+
+{% block content %}
+    <script src="https://cesiumjs.org/releases/1.58/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesiumjs.org/releases/1.58/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+    <div id="cesiumContainer" class="fullSize"></div>
+    <!--<div id="loadingOverlay">
+        <h1>Loading...</h1>
+    </div>-->
+
+
+    {% load static %}
+    <script src = {% static "js/relief.js" %}> </script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "overview/base_generic.html" %}
+
+{% block content %}
+    <!--<h1>Liste de vols</h1>-->
+    {% if flight_list %}
+        <p>{{ information.flights_number }} vols pour une durée totale de {{ information.duration_sum }} heures. </p>
+        {% for year, info_for_year in information.information_per_year.items %}
+            <p>{{ year }} : {{ info_for_year.duration }} heures de vols en {{ info_for_year.flights_number_per_year }} vols</p>
+        {% endfor %}
+        <table style="width:100%">
+            <tr>
+                <th align="left">Date</th>
+                <th align="left">Site</th>
+                <th align="left">Durée (min)</th>
+            </tr>
+            {% for flight in flight_list %}
+                <tr>
+                    <td><a href="{% url 'detail' pk=flight.pk %}">{{ flight.date }}</a></td>
+                    <td>{{ flight.site }}</td>
+                    <td>{{ flight.duration }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </br>
+    {% else %}
+        <p>Aucun vols</p>
+    {% endif %}
+{% endblock %}

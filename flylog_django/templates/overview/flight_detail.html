@@ -1,0 +1,61 @@
+{% extends "overview/base_generic.html" %}
+
+{% block content %}
+    <h1>Vol du {{ object.date }}</h1>
+
+    <p>
+        <a href="{% url 'update' pk=object.pk %}">Modifier</a>
+        <a href="{% url 'delete' pk=object.pk %}">Supprimer</a>
+    </p>
+    <p>
+        <a href="{% url 'add-image' pk=object.pk %}">Ajouter image</a>
+        <a href="{% url 'add-video' pk=object.pk %}">Ajouter video</a>
+    </p>
+
+    <p>{{ object.site }}</p>
+    <p>Durée du vol : {{ object.duration }} minutes</p>
+    <p>Aile : {{ object.wing }}</p>
+    <p>Cadre : {{ object.context }}</p>
+    <p>Commentaire : {{ object.comment }}</p>
+
+    {% for image in object.image_set.all %}
+    <img width=40% src="/media/{{ image.img_path }}" alt="{{ image.img_path }}"></br>
+        <a href="{% url 'delete-image' pk=image.pk %}">Supprimer</a></br></br>
+    {% endfor %}
+    {% for video in flight.video_set.all %}
+        <img width=40% src="/media/{{ video.video_path }}" alt=""></br>
+        <video width="640" height="480" controls>
+            <source src="/media/{{ video.video_path }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video></br>
+        <a href="{% url 'delete-video' pk=video.pk %}">Supprimer</a></br></br>
+    {% endfor %}
+
+    {% if object.igc %}
+
+        <a href="/media/tracks/{{ object.igc_filename }}">{{ object.igc_filename }}</a></br>
+
+        <script type="text/javascript">
+            igc_geojson = {{ igc_geojson | safe }}
+            igc_czml = {{ igc_czml | safe }}
+            cesium_key = {{ cesium_key | safe }}
+        </script>
+
+        <div id="leaflet-map"></div>
+        <div id="cesiumContainer" class="fullSize" style="display: none;"></div>
+
+        <button id="toggleButton" type="button" class="btn btn-link" onclick="toggle3DMap();">   Show 3D map</button></br>
+
+		<script src="https://cesium.com/downloads/cesiumjs/releases/1.82/Build/Cesium/Cesium.js"></script>
+		<link href="https://cesium.com/downloads/cesiumjs/releases/1.82/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+        {% load static %}
+        <script src = {% static "js/L.Control.Elevation.js" %}> </script>
+        {% load static %}
+        <script src = {% static "js/igc.js" %}> </script>
+
+    {% endif %}
+
+{% endblock %}
