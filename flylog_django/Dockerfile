@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3-alpine
+FROM python:3.9-alpine
 
 # set work directory
 WORKDIR /usr/src/flylog_django
