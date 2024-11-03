@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3-alpine
+FROM python:3.9-alpine
 
 # set work directory
 WORKDIR /usr/src/flylog_django
@@ -9,6 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install dependencies
+RUN python --version
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt

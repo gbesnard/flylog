@@ -4,8 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('import_json/', views.import_json, name='import_json'),
-    path('export_json/', views.export_json, name='export_json'),
     path('create/', views.FlightCreateView.as_view(), name='create'),
     path('create_from_igc/', views.FlightCreateFromIGCView.as_view(), name='create-from-igc'),
     path('photos/', views.PhotosView.as_view(), name='photos'),

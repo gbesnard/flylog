@@ -26,3 +26,28 @@ body {
 #toggleButton {
     padding: 0px;
 }
+
+#form-control {
+    width: 100%;
+}
+
+img { 
+    height: auto;
+    width: 640px;
+}
+
+video { 
+    height: auto;
+    width: 640px;
+}
+
+@media only screen and (max-width : 640px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+    video {
+        width: 100%;
+        height: auto;
+    }
+}

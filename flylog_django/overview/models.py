@@ -4,17 +4,18 @@ import datetime
 from django.utils import timezone
 from django.dispatch import receiver
 from django.utils.translation import gettext as _
+from django.core.validators import MaxLengthValidator
 
 
 class Flight(models.Model):
     id = models.AutoField(primary_key=True)
-    date = models.DateTimeField(verbose_name=_('Date'), default=datetime.datetime.now(tz=timezone.utc))
+    date = models.DateTimeField(verbose_name=_('Date'), default=datetime.datetime.now(tz=timezone.utc).replace(microsecond=0))
     site = models.CharField(max_length=32, verbose_name=_('Site'), default='St Hilaire du Touvet')
     duration = models.fields.PositiveSmallIntegerField(verbose_name=_('Durée'), default=0)
     wing = models.CharField(max_length=32, verbose_name=_('Aile'), default='Hook 5P, NIVIUK')
     context = models.CharField(max_length=32, verbose_name=_('Cadre'), default='Autonomie')
-    comment = models.CharField(max_length=2048, verbose_name=_('Commentaires'))
-    igc = models.FileField(verbose_name=_('Trace IGC'), upload_to='tracks/', blank=True, default='')
+    comment = models.CharField(max_length=2048, verbose_name=_('Commentaire'))
+    igc = models.FileField(verbose_name=_('Trace IGC'), upload_to='tracks/', default='')
 
     class Meta:
         ordering = ['date']

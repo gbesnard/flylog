@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 
-from .models import Flight, Image, Video
+from . import models
+from . import forms
 
 import json
 import os
@@ -24,7 +25,7 @@ class IndexView(LoginRequiredMixin, View):
     def get(self, request):
         information = GeneralInfo()
         context = {
-            'flight_list': Flight.objects.all(),
+            'flight_list': models.Flight.objects.all(),
             'information': information
         }
         return render(request, 'overview/flight_list.html', context)
@@ -38,13 +39,13 @@ class ReliefView(LoginRequiredMixin, View):
 class PhotosView(LoginRequiredMixin, View):
     def get(self, request):
         context = {
-            'flight_list': Flight.objects.all(),
+            'flight_list': models.Flight.objects.all(),
         }
         return render(request, 'overview/photos.html', context)
 
 
 class FlightDetailView(LoginRequiredMixin, DetailView):
-    model = Flight
+    model = models.Flight
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -145,16 +146,16 @@ class FlightDetailView(LoginRequiredMixin, DetailView):
         return context
 
 class FlightCreateView(LoginRequiredMixin, CreateView):
-    model = Flight
-    fields = ['date', 'site', 'duration', 'wing', 'context', 'comment', 'igc']
+    model = models.Flight
+    form_class = forms.CreateForm
 
     def get_success_url(self):
         return '/' + str(self.object.id) + '/detail/'
 
 
 class FlightCreateFromIGCView(LoginRequiredMixin, CreateView):
-    model = Flight
-    fields = ['site', 'wing', 'comment', 'igc']
+    model = models.Flight
+    form_class = forms.CreateFromIgcForm
 
     def get_success_url(self):
         return '/' + str(self.object.id) + '/detail/'
@@ -177,7 +178,7 @@ class FlightCreateFromIGCView(LoginRequiredMixin, CreateView):
 
 
 class FlightAddImageView(LoginRequiredMixin, CreateView):
-    model = Image
+    model = models.Image
     fields = ['img_path']
 
     def get_initial(self):
@@ -185,14 +186,14 @@ class FlightAddImageView(LoginRequiredMixin, CreateView):
         return super().get_initial()
 
     def form_valid(self, form):
-        form.instance.flight = Flight.objects.get(pk=self.kwargs['pk'])
+        form.instance.flight = models.Flight.objects.get(pk=self.kwargs['pk'])
         post = form.save(commit=False)
         post.save()
         return super().form_valid(form)
 
 
 class FlightAddVideoView(LoginRequiredMixin, CreateView):
-    model = Video
+    model = models.Video
     fields = ['video_path']
 
     def get_initial(self):
@@ -200,28 +201,28 @@ class FlightAddVideoView(LoginRequiredMixin, CreateView):
         return super().get_initial()
 
     def form_valid(self, form):
-        form.instance.flight = Flight.objects.get(pk=self.kwargs['pk'])
+        form.instance.flight = models.Flight.objects.get(pk=self.kwargs['pk'])
         post = form.save(commit=False)
         post.save()
         return super().form_valid(form)
 
 
 class FlightDeleteImageView(LoginRequiredMixin, DeleteView):
-    model = Image
+    model = models.Image
 
     def get_success_url(self):
         return '/' + str(self.object.flight.id) + '/detail/'
 
 
 class FlightDeleteVideoView(LoginRequiredMixin, DeleteView):
-    model = Video
+    model = models.Video
 
     def get_success_url(self):
         return '/' + str(self.object.flight.id) + '/detail/'
 
 
 class FlightUpdateView(LoginRequiredMixin, UpdateView):
-    model = Flight
+    model = models.Flight
     success_url = "/"
     fields = ['date', 'site', 'duration', 'wing', 'context', 'comment', 'igc']
     template_name_suffix = '_update_form'
@@ -232,7 +233,7 @@ class FlightUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class FlightDeleteView(LoginRequiredMixin, DeleteView):
-    model = Flight
+    model = models.Flight
     success_url = "/"
 
 
@@ -247,7 +248,7 @@ class GeneralInfo:
         duration_sum_per_year_tmp = {}
         duration_sum_tmp = 0
 
-        for flight in Flight.objects.all():
+        for flight in models.Flight.objects.all():
             year = flight.date.year.__str__();
             if year not in duration_sum_per_year_tmp:
                 duration_sum_per_year_tmp[year] = flight.duration
@@ -299,12 +300,12 @@ def import_json(request):
 
             if "videos" in row:
                 for video_dict in row["videos"]:
-                    video = Video(url=video_dict["url"], flight=flight)
+                    video = models.Video(url=video_dict["url"], flight=flight)
                     video.save()
 
             if "images" in row:
                 for image_dict in row["images"]:
-                    image = Image(url=image_dict["url"], flight=flight)
+                    image = models.Image(url=image_dict["url"], flight=flight)
                     image.save()
 
     return HttpResponse("JSON import done.")
