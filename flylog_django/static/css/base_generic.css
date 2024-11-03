@@ -31,12 +31,16 @@ body {
     width: 100%;
 }
 
-img { 
+.clickable-row {
+    cursor:pointer;
+}
+
+img {
     height: auto;
     width: 640px;
 }
 
-video { 
+video {
     height: auto;
     width: 640px;
 }

@@ -3,23 +3,30 @@
 {% block content %}
     <!--<h1>Liste de vols</h1>-->
     {% if flight_list %}
+        <h1> Résumé </h1>
         <p>{{ information.flights_number }} vols pour une durée totale de {{ information.duration_sum }} heures. </p>
         {% for year, info_for_year in information.information_per_year.items %}
             <p>{{ year }} : {{ info_for_year.duration }} heures de vols en {{ info_for_year.flights_number_per_year }} vols</p>
         {% endfor %}
-        <table style="width:100%">
-            <tr>
-                <th align="left">Date</th>
-                <th align="left">Site</th>
-                <th align="left">Durée (min)</th>
-            </tr>
-            {% for flight in flight_list %}
+
+        <h1> Liste </h1>
+        <table class="table table-hover table-condensed table-striped" style="width:100%">
+            <thead>
                 <tr>
-                    <td><a href="{% url 'detail' pk=flight.pk %}">{{ flight.date }}</a></td>
-                    <td>{{ flight.site }}</td>
-                    <td>{{ flight.duration }}</td>
+                    <th align="left">Date</th>
+                    <th align="left">Site</th>
+                    <th align="left">Durée (min)</th>
                 </tr>
-            {% endfor %}
+                </thead>
+            <tbody>
+                {% for flight in flight_list %}
+                    <tr class='clickable-row' data-href="{% url 'detail' pk=flight.pk %}">
+                        <td>{{ flight.date }}</td>
+                        <td>{{ flight.site }}</td>
+                        <td>{{ flight.duration }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
         </br>
     {% else %}

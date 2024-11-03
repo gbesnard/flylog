@@ -3,6 +3,6 @@
 {% block content %}
     <form method="post">{% csrf_token %}
         <p>Supprimer l'image "{{ image.img_path }}"?</p>
-        <input class="btn btn-danger" type="submit" value="Confirm">
+        <input class="btn btn-danger" type="submit" value="Confirmer">
     </form>
 {% endblock %}

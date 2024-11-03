@@ -5,7 +5,7 @@
 
     <p>
         <a href="{% url 'add-image' pk=object.pk %}" class="btn btn-primary">Ajouter image</a>
-        <a href="{% url 'add-video' pk=object.pk %}"class="btn btn-primary">Ajouter video</a>
+        <a href="{% url 'add-video' pk=object.pk %}" class="btn btn-primary">Ajouter video</a>
     </p>
 
     <p>
@@ -20,8 +20,8 @@
     <p>Commentaire : {{ object.comment }}</p>
 
     {% for image in object.image_set.all %}
-    <img src="/media/{{ image.img_path }}" alt="{{ image.img_path }}"></br>
-    </br><a href="{% url 'delete-image' pk=image.pk %}" class="btn btn-danger">Supprimer</a></br></br>
+    <img width="500" src="/media/{{ image.img_path }}" alt="{{ image.img_path }}"></br>
+    <a href="{% url 'delete-image' pk=image.pk %}">Supprimer</a></br></br>
     {% endfor %}
     {% for video in flight.video_set.all %}
         <img src="/media/{{ video.video_path }}" alt=""></br>
@@ -29,7 +29,7 @@
             <source src="/media/{{ video.video_path }}" type="video/mp4">
             Your browser does not support the video tag.
         </video></br>
-        <a href="{% url 'delete-video' pk=video.pk %}" class="btn btn-danger">Supprimer</a></br></br>
+        <a href="{% url 'delete-video' pk=video.pk %}" >Supprimer</a></br></br>
     {% endfor %}
 
     {% if object.igc %}
@@ -44,7 +44,7 @@
 
         <div id="leaflet-map"></div>
 
-        <br><button id="toggleButton" type="button" class="btn btn-primary" onclick="toggle3DMap();"> Show 3D map</button></br>
+        <br><button id="toggleButton" onclick="toggle3DMap();"> Show 3D map</button></br>
 
         <div id="cesiumContainer" class="fullSize" style="display: none;"></div>
 
