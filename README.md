@@ -2,7 +2,6 @@
 
 Personal web app to log and track paragliding flights.
 
-
 ## Features
 
 - Flights log information (date, takeoff site, duration, comments).
@@ -18,9 +17,4 @@ Personal web app to log and track paragliding flights.
 - Gunicorn server.
 - Nginx reverse-proxy.
 - Docker and docker compose.
-
-
-## Todo
-
-- remove docker root usage
 
